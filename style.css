@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-bg-color: #630000;
+  --lighter-bg-color: #EEEBDD;
+  --light-bg-color: #c2c0b7e5;
+  --dark-txt-color: #1B1717;
+  --light-txt-color: #810000;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background: var(--dark-bg-color);
+  min-width: 345px;
+  height: 100vh;
+}
+
+h1 {
+  color: var(--lighter-bg-color);
+  font-size: 3rem;
+}
+
+.container {
+  height: 80vh;
+  position: relative;
+}
+
+.player{
+  background: var(--lighter-bg-color);
+  color: var(--light-txt-color);
+  height: 35vh;
+  border-radius: 10px;
+  font-size: 2rem;
+  box-shadow: 2px 2px 4px black;
+}
+
+.current-player{
+  background-color: var(--light-bg-color);
+}
+
+.dice-img{
+  width: 20%;
+}
+
+.score-box {
+  font-size: 0.7rem;
+  background: var(--light-txt-color);
+  color: var(--lighter-bg-color);
+  width: 60px;
+  height: 50px;
+  margin: 20% auto;
+  line-height: 0.5rem;
+}
+
+.temporary-score {
+  font-size: 1.2rem;
+}
+
+.btn {
+  background: var(--dark-txt-color);
+  color: var(--lighter-bg-color);
+  position: absolute;
+  bottom: 2%;
+}
+
+.hold {
+  right: 1.5%;
+}
+
+.roll {
+  right: 25%;
+}
+
+.new-game {
+  left: 1.5%
+}
+

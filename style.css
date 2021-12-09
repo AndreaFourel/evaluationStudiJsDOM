@@ -16,35 +16,41 @@
 body {
   font-family: 'Lato', sans-serif;
   background: var(--dark-bg-color);
-  min-width: 345px;
-  height: 100vh;
+  min-width: 329px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.title {
+  min-height: 10vh;
 }
 
 h1 {
   color: var(--lighter-bg-color);
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 .container {
-  height: 80vh;
-  position: relative;
+ min-height: 80vh;
 }
 
-.player{
+.col{
   background: var(--lighter-bg-color);
+  box-shadow: 2px 2px 4px black;
   color: var(--light-txt-color);
-  height: 35vh;
   border-radius: 10px;
   font-size: 2rem;
-  box-shadow: 2px 2px 4px black;
+  height: 35vh;
 }
+
 
 .current-player{
   background-color: var(--light-bg-color);
 }
 
-.dice-img{
-  width: 20%;
+
+.dice{
+  width: 2rem;
 }
 
 .score-box {
@@ -53,8 +59,8 @@ h1 {
   color: var(--lighter-bg-color);
   width: 60px;
   height: 50px;
-  margin: 20% auto;
   line-height: 0.5rem;
+  border-radius: 8px;
 }
 
 .temporary-score {
@@ -62,21 +68,33 @@ h1 {
 }
 
 .btn {
-  background: var(--dark-txt-color);
+  background: transparent;
   color: var(--lighter-bg-color);
-  position: absolute;
-  bottom: 2%;
+
 }
 
-.hold {
-  right: 1.5%;
+
+.bi-circle-fill{
+  font-size: 0.5rem;
 }
 
-.roll {
-  right: 25%;
+
+
+
+@media screen and (min-width: 576px) {
+  .col {
+    height: 60vh;
+  }
+
 }
 
-.new-game {
-  left: 1.5%
-}
 
+@media (orientation: landscape) and (max-height: 420px) {
+  .col {
+    height: 60vh;
+  }
+  .title{
+    margin-bottom: 10px;
+  }
+ 
+}

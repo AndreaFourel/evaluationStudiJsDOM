@@ -48,6 +48,23 @@ h1 {
   background-color: var(--light-bg-color);
 }
 
+.winner-bg {
+  background-image: url(images/woman.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.looser-bg{
+  background-image: url(images/crying.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.big-title {
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
 
 .dice{
   width: 2rem;

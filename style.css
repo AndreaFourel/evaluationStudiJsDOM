@@ -16,7 +16,7 @@
 body {
   font-family: 'Lato', sans-serif;
   background: var(--dark-bg-color);
-  min-width: 329px;
+  min-width: 319px;
   min-height: 100vh;
   position: relative;
 }
@@ -43,6 +43,16 @@ h1 {
   height: 35vh;
 }
 
+.game-rules{
+  position: fixed;
+  z-index: 20;
+  background-color: var(--dark-bg-color);
+  color: var(--lighter-bg-color);
+  width: 80vw;
+  left: 10%;
+  height: 60vh;
+
+}
 
 .current-player{
   background-color: var(--light-bg-color);
@@ -67,15 +77,15 @@ h1 {
 
 
 .dice{
-  width: 2rem;
+  width: 3rem;
 }
 
 .score-box {
-  font-size: 0.7rem;
+  font-size: 1rem;
   background: var(--light-txt-color);
   color: var(--lighter-bg-color);
   width: 60px;
-  height: 50px;
+  height: 60px;
   line-height: 0.5rem;
   border-radius: 8px;
 }
@@ -86,7 +96,13 @@ h1 {
 
 .btn {
   color: var(--lighter-bg-color);
+  background: transparent;
+  font-size: 1rem;
+}
 
+.btn:hover{
+  color: var(--lighter-bg-color);
+  background: var(--dark-txt-color);
 }
 
 
@@ -95,11 +111,22 @@ h1 {
 }
 
 
+@media screen and (min-width: 520px) {
+  .btn {
+    font-size: 1.5rem;
+  }
 
+}
 
 @media screen and (min-width: 576px) {
   .col {
     height: 60vh;
+  }
+}
+
+@media screen and (max-height: 640px) {
+  .dice{
+    width: 2rem;
   }
 
 }
@@ -112,5 +139,19 @@ h1 {
   .title{
     margin-bottom: 10px;
   }
+  .dice{
+    width: 2rem;
+  }
+  .score-box{
+    font-size: 0.7rem;
+    width: 50px;
+    height: 50px;
+  }
+  .temporary-score{
+    font-size: 1rem;
+  }
  
+  .btn {
+    font-size: 1rem;
+  }
 }

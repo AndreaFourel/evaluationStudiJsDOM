@@ -3,6 +3,8 @@ const player2 = document.querySelector('.player-2');
 const diceRoll = document.querySelector('.roll');
 const holdBtn = document.querySelector('.hold');
 const newGameBtn = document.querySelector('.new-game');
+const rulesBtn = document.querySelector('.rules');
+
 
 let playerCurrentScore = document.querySelectorAll('.t-score');
 let player1GlobalScore = document.querySelector('.global-score-1');
@@ -17,7 +19,7 @@ let currentPlayerGlobalScore = 0;
 let randomNumber = Math.round(Math.random()*5 + 1);
 
 // set random value to dice image and current score
-let randomDiceValue = () => {
+const randomDiceValue = () => {
   randomNumber;
   if (currentPlayer === player1){
     diceImage[0].src = `images/dice-${randomNumber}.svg`;
@@ -31,7 +33,7 @@ let randomDiceValue = () => {
 }
 
 // switch player function
-let switchPlayer = () => {
+const switchPlayer = () => {
   if (currentPlayer === player1){
     player1.classList.remove('current-player');
     player1.childNodes[1].childNodes[1].childNodes[3].classList.add('d-none');
@@ -50,7 +52,7 @@ let switchPlayer = () => {
 }
 
 // roll set function
-let roll = () => {
+const roll = () => {
   if(randomNumber!=1){
     randomDiceValue();
   } else {
@@ -71,7 +73,7 @@ let roll = () => {
 
 
 // hold set function
-let hold = () => {
+const hold = () => {
   if (currentPlayer === player1) {
     currentPlayerGlobalScore += currentPlayerScore;
     player1GlobalScore.innerHTML = parseInt(player1GlobalScore.innerHTML)+currentPlayerGlobalScore;
@@ -89,7 +91,7 @@ let hold = () => {
   }
 }
 
-let winner = () => {
+const winner = () => {
   if(currentPlayer.children[0].children[1].innerHTML >= 20){
     currentPlayer.classList.add("winner-bg");
     currentPlayer.children[0].children[0].children[0].classList.add("big-title");
@@ -113,6 +115,9 @@ let winner = () => {
 diceRoll.addEventListener('click', roll);
 holdBtn.addEventListener('click', hold);
 newGameBtn.addEventListener('click', () => window.location.reload());
+rulesBtn.addEventListener('click' , ()=>{
+  alert(gameRules);
+})
 
 
 

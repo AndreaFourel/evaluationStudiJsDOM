@@ -35,7 +35,7 @@ h1 {
 }
 
 .col{
-  background: var(--lighter-bg-color);
+  background: var(--light-bg-color);
   box-shadow: 2px 2px 4px black;
   color: var(--light-txt-color);
   border-radius: 10px;
@@ -43,44 +43,20 @@ h1 {
   height: 35vh;
 }
 
-.game-rules{
-  position: fixed;
-  z-index: 20;
-  background-color: var(--dark-bg-color);
-  color: var(--lighter-bg-color);
-  width: 80vw;
-  left: 10%;
-  height: 60vh;
-
-}
-
 .current-player{
-  background-color: var(--light-bg-color);
+  background-color: var(--lighter-bg-color);
 }
 
-.winner-bg {
-  background-image: url(images/woman.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+.bi-circle-fill{
+  font-size: 0.5rem;
 }
-
-.looser-bg{
-  background-image: url(images/crying.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.big-title {
-  font-size: 4rem;
-  font-weight: bolder;
-}
-
 
 .dice{
   width: 3rem;
 }
 
 .score-box {
+  box-shadow: 1px 1px 2px black;
   font-size: 1rem;
   background: var(--light-txt-color);
   color: var(--lighter-bg-color);
@@ -105,17 +81,36 @@ h1 {
   background: var(--dark-txt-color);
 }
 
-
-.bi-circle-fill{
-  font-size: 0.5rem;
+.winner-bg, .looser-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+.winner-bg {
+  background-image: url(images/woman.jpg);
+}
+
+.looser-bg{
+  background-image: url(images/crying.png);
+}
+
+.big-title {
+  font-size: 4rem;
+  font-weight: bolder;
+}
+
+.modal-footer>.btn{
+  color: var(--dark-bg-color);
+} 
+
+.modal-title{
+  color: var(--dark-bg-color);
+}
 
 @media screen and (min-width: 520px) {
   .btn {
     font-size: 1.5rem;
   }
-
 }
 
 @media screen and (min-width: 576px) {
@@ -128,9 +123,7 @@ h1 {
   .dice{
     width: 2rem;
   }
-
 }
-
 
 @media (orientation: landscape) and (max-height: 420px) {
   .col {
@@ -150,7 +143,6 @@ h1 {
   .temporary-score{
     font-size: 1rem;
   }
- 
   .btn {
     font-size: 1rem;
   }

@@ -11,13 +11,37 @@
 <body>
   <div class="title text-center pt-1">
     <h1 class="d-inline">Dice Battle</h1>
-    <button class="btn rules d-inline align-top"><i class="bi bi-info-square"></i></button>
+    <div class="modal fade" id="rulesModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Règles du jeux</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-6">
+            <p>Le jeu comprend 2 joueurs sur un seul et même écran.<br>
+              Chaque joueur possède un score temporaire (ROUND) et un score global (GLOBAL).<br>
+              À chaque tour, le joueur a son ROUND initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. 
+              Le résultat d’un lancer est ajouté au ROUND. </p>
+            <p>Lors de son tour, le joueur peut décider à tout moment de: <br>
+              - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+              tour de l’autre joueur. <br>
+              - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.
+              Le premier joueur qui atteint les 100 points sur global gagne le jeu.</p>  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline-secondary fs-6" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="btn rules d-inline align-top" data-bs-toggle="modal" data-bs-target="#rulesModal"><i class="bi bi-info-square"></i></button>
   </div>
   
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2 g-0">
       
-      <div class="col col-12 col-md-6 text-center player-1 current-player p-1">
+      <div class="col col-12 text-center player-1 current-player p-1">
         <div class="player h-100 d-flex flex-column ">
           <div class="mt">
             <h2 class="d-inline">Player 1</h2>
@@ -32,7 +56,7 @@
         </div>
       </div>
       
-      <div class="col col-12 col-md-6 text-center player-2 p-1 ">
+      <div class="col col-12  text-center player-2 p-1">
         <div class="player h-100 d-flex flex-column">
           <div class="mt">
             <h2 class="d-inline">Player 2</h2>

@@ -18,14 +18,24 @@ let currentPlayerGlobalScore = 0;
 // set random number varaible
 let randomNumber = Math.round(Math.random()*5 + 1);
 
+// dice rotation function
+const diceRotation = (i) => {
+  diceImage[i].classList.add('rotation');
+  setTimeout(() => {
+    diceImage[i].classList.remove('rotation');
+  }, 1000);
+}
+
 // set random value to dice image and increment current score
 const randomDiceValue = () => {
   randomNumber;
   if (currentPlayer === player1){
+    diceRotation(0);
     diceImage[0].src = `images/dice-${randomNumber}.svg`;
     currentPlayerScore += randomNumber;
     playerCurrentScore[0].innerHTML = currentPlayerScore;
-  } else {
+     } else {
+    diceRotation(1);
     diceImage[1].src = `images/dice-${randomNumber}.svg`;
     currentPlayerScore += randomNumber;
     playerCurrentScore[1].innerHTML = currentPlayerScore;

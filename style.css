@@ -60,12 +60,42 @@ h1 {
 }
 
 @keyframes rotation{
-  0%{transform: rotate(60deg);}
-  20%{transform: rotate(120deg);}
-  40%{transform: rotate(180deg);}
-  60%{transform: rotate(240deg);}
-  80%{transform: rotate(300deg);}
-  100%{transform: rotate(360deg);}
+  0%{
+    transform: rotate(60deg);
+    background-image: url(images/dice-3.svg), url(images/dice-4.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  20%{
+    transform: rotate(120deg);
+    background-image: url(images/dice-2.svg), url(images/dice-6.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  40%{
+    transform: rotate(180deg);
+    background-image: url(images/dice-3.svg), url(images/dice-5svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  60%{
+    transform: rotate(240deg);
+    background-image: url(images/dice-4.svg), url(images/dice-2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  80%{
+    transform: rotate(300deg);
+    background-image: url(images/dice-5.svg), url(images/dice-3svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  100%{
+    transform: rotate(360deg);
+    background-image: url(images/dice-4.svg), url(images/dice-2.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 }
 
 .score-box {

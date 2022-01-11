@@ -21,24 +21,31 @@ let randomNumber = Math.round(Math.random()*5 + 1);
 // dice rotation function
 const diceRotation = (i) => {
   diceImage[i].classList.add('rotation');
+  diceRoll.removeEventListener('click', roll);
   setTimeout(() => {
     diceImage[i].classList.remove('rotation');
+    diceRoll.addEventListener('click', roll);
   }, 1000);
 }
 
 // set random value to dice image and increment current score
 const randomDiceValue = () => {
-  randomNumber;
   if (currentPlayer === player1){
     diceRotation(0);
-    diceImage[0].src = `images/dice-${randomNumber}.svg`;
-    currentPlayerScore += randomNumber;
-    playerCurrentScore[0].innerHTML = currentPlayerScore;
-     } else {
+    setTimeout(() => {
+      randomNumber;
+      diceImage[0].src = `images/dice-${randomNumber}.svg`;
+      currentPlayerScore += randomNumber;
+      playerCurrentScore[0].innerHTML = currentPlayerScore;
+    }, 1000);
+  } else {
     diceRotation(1);
-    diceImage[1].src = `images/dice-${randomNumber}.svg`;
-    currentPlayerScore += randomNumber;
-    playerCurrentScore[1].innerHTML = currentPlayerScore;
+    setTimeout(() => {
+      randomNumber;
+      diceImage[1].src = `images/dice-${randomNumber}.svg`;
+      currentPlayerScore += randomNumber;
+      playerCurrentScore[1].innerHTML = currentPlayerScore;
+    }, 1000);
   }
 }
 
@@ -68,11 +75,13 @@ const roll = () => {
     randomDiceValue();
   } else {
     if (currentPlayer === player1) {
+      diceRotation(0);
       diceImage[0].src = `images/dice-${randomNumber}.svg`;
       currentPlayerScore = 0;
       playerCurrentScore[0].innerHTML = currentPlayerScore;
       switchPlayer();
     } else {
+      diceRotation(1);
       diceImage[1].src = `images/dice-${randomNumber}.svg`;
       currentPlayerScore = 0;
       playerCurrentScore[1].innerHTML = currentPlayerScore;

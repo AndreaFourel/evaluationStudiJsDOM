@@ -28,24 +28,14 @@ const diceRotation = (i) => {
   }, 1000);
 }
 
-// set random value to dice image and increment current score
-const randomDiceValue = () => {
+// dice roll function: when roll dice => dice rotation for 1sec & call diceValueTest function
+const roll = () => {
   if (currentPlayer === player1){
     diceRotation(0);
-    setTimeout(() => {
-      randomNumber;
-      diceImage[0].src = `images/dice-${randomNumber}.svg`;
-      currentPlayerScore += randomNumber;
-      playerCurrentScore[0].innerHTML = currentPlayerScore;
-    }, 1000);
+    diceValueTest(0);
   } else {
     diceRotation(1);
-    setTimeout(() => {
-      randomNumber;
-      diceImage[1].src = `images/dice-${randomNumber}.svg`;
-      currentPlayerScore += randomNumber;
-      playerCurrentScore[1].innerHTML = currentPlayerScore;
-    }, 1000);
+    diceValueTest(1);
   }
 }
 
@@ -68,27 +58,25 @@ const switchPlayer = () => {
   }
 }
 
-// roll dice function : when roll, if dice value is not 1, call randonDiceValue()
-//                                 if dice value is 1, curent player score becomes 0 and will switch player
-const roll = () => {
-  if(randomNumber!=1){
-    randomDiceValue();
-  } else {
-    if (currentPlayer === player1) {
-      diceRotation(0);
-      diceImage[0].src = `images/dice-${randomNumber}.svg`;
-      currentPlayerScore = 0;
-      playerCurrentScore[0].innerHTML = currentPlayerScore;
-      switchPlayer();
+
+/*dice value test and current player score incrementation function : 
+ if dice random value is not 1, set random value to dice image and increment current score
+ if dice random value is 1, current player score becomes 0 and will switch player*/
+const diceValueTest = (i) => {
+  setTimeout(() => {
+    randomNumber;
+    if (randomNumber!== 1) {
+      diceImage[i].src = `images/dice-${randomNumber}.svg`;
+      currentPlayerScore += randomNumber;
+      playerCurrentScore[i].innerHTML = currentPlayerScore;
     } else {
-      diceRotation(1);
-      diceImage[1].src = `images/dice-${randomNumber}.svg`;
+      diceImage[i].src = `images/dice-${randomNumber}.svg`;
       currentPlayerScore = 0;
-      playerCurrentScore[1].innerHTML = currentPlayerScore;
+      playerCurrentScore[i].innerHTML = currentPlayerScore;
       switchPlayer();
     }
-  }
-  randomNumber = Math.round(Math.random()*5 + 1);
+    randomNumber = Math.round(Math.random()*5 + 1);
+  }, 1000);
 }
 
 
@@ -111,7 +99,8 @@ const hold = () => {
   }
 }
 
-// winner function will switch players unless current player blobal score is >= 100
+// winner function : switch players (when hold) unless current player global score is >= 100
+//                 : add winner/looser style to the page         
 const winner = () => {
   if(currentPlayer.children[0].children[1].innerHTML >= 100){
     currentPlayer.classList.add("winner-bg");

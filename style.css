@@ -52,7 +52,7 @@ h1 {
 }
 
 .dice{
-  width: 3rem;
+  width: 2rem;
 }
 
 .rotation{
@@ -104,8 +104,8 @@ h1 {
   background: var(--light-txt-color);
   color: var(--lighter-bg-color);
   width: 60px;
-  height: 60px;
-  line-height: 0.5rem;
+  height: 50px;
+  line-height: 0.6rem;
   border-radius: 8px;
 }
 
@@ -150,7 +150,7 @@ h1 {
   color: var(--dark-bg-color);
 }
 
-@media screen and (min-width: 520px) {
+@media screen and (min-width: 520px){
   .btn {
     font-size: 1.5rem;
   }
@@ -160,7 +160,7 @@ h1 {
   .score-box {
     font-size: 1.2rem;
     width: 80px;
-    height:60px;
+    height: 60px;
   }
   .temporary-score {
     font-size: 1.5rem;
@@ -200,4 +200,24 @@ h1 {
   .btn {
     font-size: 1rem;
   }
+}
+@media (orientation: landscape) and (max-height: 320px){
+  .player>h2{
+    font-size: 0.5rem;
+  }
+  .dice{
+    width: 1.5rem;
+  }
+  .global-score-1,.global-score-2 {
+    font-size: 1.3rem;
+  }
+  h1{
+    font-size: 1.5rem;
+  }
+  .score-box {
+    font-size: 0.8rem;
+    width: 50px;
+    height: 40px;
+    line-height: 0.3rem;
+ }
 }

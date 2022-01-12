@@ -1,3 +1,6 @@
+import{images} from '/js/images.js';
+import{responsive} from '/js/responsive.js';
+
 // variables set
 const player1 = document.querySelector('.player-1');
 const player2 = document.querySelector('.player-2');
@@ -66,11 +69,11 @@ const diceValueTest = (i) => {
   setTimeout(() => {
     randomNumber;
     if (randomNumber!== 1) {
-      diceImage[i].src = `images/dice-${randomNumber}.svg`;
+      diceImage[i].src = images[randomNumber-1];
       currentPlayerScore += randomNumber;
       playerCurrentScore[i].innerHTML = currentPlayerScore;
     } else {
-      diceImage[i].src = `images/dice-${randomNumber}.svg`;
+      diceImage[i].src = images[randomNumber-1];
       currentPlayerScore = 0;
       playerCurrentScore[i].innerHTML = currentPlayerScore;
       switchPlayer();
@@ -126,6 +129,9 @@ diceRoll.addEventListener('click', roll);
 holdBtn.addEventListener('click', hold);
 newGameBtn.addEventListener('click', () => window.location.reload());
 
+// event listener for iphone5/se responsive
+addEventListener('load', responsive);
+addEventListener('resize', responsive);
 
 
 

@@ -1,5 +1,5 @@
-import{images} from '/js/images.js';
-import{responsive} from '/js/responsive.js';
+import{images} from './js/images.js';
+import{responsive} from './js/responsive.js';
 
 // variables set
 const player1 = document.querySelector('.player-1');
